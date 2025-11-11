@@ -1,50 +1,76 @@
-# Welcome to your Expo app 👋
+# Liste App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+En React Native shopping list app laget med Expo, som lar deg opprette og administrere flere gjøremåls-lister.
 
-## Get started
+## Funksjoner
 
-1. Install dependencies
+- Opprett og administrer flere handlelister
+- Legg til varer i lister ved å trykke Enter
+- Marker varer som handlet/ikke handlet med et trykk
+- Drag-and-drop for å endre rekkefølge på varer (long-press)
+- Gi nytt navn til lister
+- Slett lister med bekreftelse
+- Automatisk sortering: uhandlede varer øverst, handlede nederst
+- Persistent lagring med JSON-filer (én fil per liste)
+
+## Teknologier
+
+- **React Native** 0.81.5
+- **Expo** SDK 54
+- **TypeScript**
+- **expo-file-system** for filbasert lagring
+- **react-native-draggable-flatlist** for drag-and-drop
+- **react-native-gesture-handler** for gestures
+
+## Installasjon
+
+1. **Installer avhengigheter**
 
    ```bash
    npm install
    ```
 
-2. Start the app
+## Kjør appen
+
+### På Android-emulator
+
+1. Start Android-emulatoren via Android Studio
+2. Kjør kommandoen:
+
+   ```bash
+   npx expo start --android
+   ```
+
+### På fysisk enhet
+
+1. **Installer Expo Go på telefonen din**
+   - Last ned Expo Go fra [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent) (Android)
+   - Eller fra [App Store](https://apps.apple.com/app/expo-go/id982107779) (iOS)
+
+2. Start Expo dev server:
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Skann QR-koden med Expo Go-appen:
+   - **Android**: Skann QR-koden direkte i Expo Go-appen
+   - **iOS**: Skann QR-koden med Camera-appen, åpne i Expo Go
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Prosjektstruktur
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+MyApp/
+├── app/
+│   ├── index.tsx          # Hovedkomponent med all UI og logikk
+│   ├── types.ts           # TypeScript interfaces (ListItem, ShoppingList)
+│   └── utils/
+│       └── storage.ts     # Filbasert lagring med expo-file-system
+├── package.json
+└── README.md
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Lisens
 
-## Learn more
+Dette er et studentprosjekt for IDATT2506 - Applikasjonsutvikling for mobile enheter.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
