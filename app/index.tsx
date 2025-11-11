@@ -196,7 +196,6 @@ export default function Index() {
           value={text}
           onChangeText={setText}
           onSubmitEditing={() => addItem()}
-          blurOnSubmit={false}
           returnKeyType="done"
         />
       </View>
