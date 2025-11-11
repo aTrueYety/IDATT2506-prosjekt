@@ -22,6 +22,16 @@ En React Native shopping list app laget med Expo, som lar deg opprette og admini
 - **react-native-draggable-flatlist** for drag-and-drop
 - **react-native-gesture-handler** for gestures
 
+## Testet på
+
+### Android Emulator
+- **API Level**: 36 (Android 16)
+- **Android Studio**: Narwhal Feature Drop | 2025.1.2 Patch 1
+
+### Expo Go
+- **Expo Go versjon**: 54.0.6
+- **Expo SDK**: 54
+
 ## Installasjon
 
 1. **Installer avhengigheter**
@@ -41,7 +51,7 @@ En React Native shopping list app laget med Expo, som lar deg opprette og admini
    npx expo start --android
    ```
 
-### På fysisk enhet
+### På fysisk enhet (ikke testet)
 
 1. **Installer Expo Go på telefonen din**
    - Last ned Expo Go fra [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent) (Android)

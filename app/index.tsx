@@ -209,7 +209,7 @@ export default function Index() {
             showsVerticalScrollIndicator={true}
             nestedScrollEnabled={true}
           >
-            {/* Unbought items section */}
+            {/* Not-done items section */}
             <View style={[styles.section]}>
               <DraggableFlatList
                 data={activeList.items.filter((i) => !i.bought)}
@@ -226,7 +226,7 @@ export default function Index() {
               />
             </View>
 
-            {/* Bought items section */}
+            {/* Done items section */}
             {activeList.items.filter((i) => i.bought).length > 0 && (
               <View style={[styles.section, { marginTop: 16 }]}>
                 <DraggableFlatList

@@ -1,7 +1,6 @@
 import { Directory, File, Paths } from 'expo-file-system';
 import type { ShoppingList } from "../types";
 
-// Use the new Directory API - creates lists directory in documents
 const listsDir = new Directory(Paths.document, 'lists');
 
 // Ensure directory exists
@@ -51,7 +50,6 @@ export async function loadAllLists(): Promise<ShoppingList[]> {
     return lists;
   } catch (err) {
     console.error("storage: readDirectory/read failed:", err);
-    // If directory doesn't exist yet, return empty array
     return [];
   }
 }
@@ -68,32 +66,4 @@ export async function deleteList(id: string) {
   }
 }
 
-export async function listSaved(): Promise<{ baseDir: string; files: { name: string; content?: string }[]; }> {
-  await ensureDirectory();
-  const result: { baseDir: string; files: { name: string; content?: string }[] } = { 
-    baseDir: listsDir.uri, 
-    files: [] 
-  };
-  
-  try {
-    const items = await listsDir.list();
-    
-    for (const item of items) {
-      if (item instanceof File && item.uri.endsWith('.json')) {
-        try {
-          const content = await item.text();
-          result.files.push({ name: item.uri.split('/').pop() || item.uri, content });
-        } catch {
-          result.files.push({ name: item.uri.split('/').pop() || item.uri });
-        }
-      }
-    }
-    
-    return result;
-  } catch (err) {
-    console.error("storage: listSaved failed:", err);
-    throw err;
-  }
-}
-
-export default { saveList, loadAllLists, deleteList, listSaved };
+export default { saveList, loadAllLists, deleteList };
